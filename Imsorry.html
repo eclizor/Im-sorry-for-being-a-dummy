@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love</title>
+  <style>
+    /* If you have Aniyah.ttf in the same folder, uncomment this block
+    @font-face {
+      font-family: 'Aniyah';
+      src: url('Aniyah.ttf') format('truetype');
+    } 
+    */
+
+    body {
+      font-family: Couri	er New, monospace; /* change to 'Aniyah' if you added it */
+      background-color: #fff5f5;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #c94f4f;
+    }
+    p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+    img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #ff6b6b;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: #e55a5a;
+    }
+    .btn-green {
+      background-color: #4CAF50;
+    }
+    .btn-red {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Envelope Image -->
+  <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Envelope">
+
+  <!-- First apology (make sure it shows on load) -->
+  <div id="apology1" style="display:block;">
+    <h1>My Apology</h1>
+    <p>I realize now how deep mistakes can cut, and that I shouldn't meddle with things that are burried in the past, I know how hard burrying things in the past is, and me unburying it might have set you back years of hard work and progress And I absolutely hate myself for doing that.</p>
+    <button class="btn" onclick="showApology(2)">Next</button>
+  </div>
+
+  <!-- Second apology -->
+  <div id="apology2" style="display:none;">
+    <h1>My Apology</h1>
+    <p>I know that this stupid litte thing I'm doing right now won't help nearly as much as I want it to help you and I also am aware that you do not want me to make this for you, but genuinely, my love I have never been forced to do this, this is me doing this because I love you and.</p>
+    <button class="btn" onclick="showApology(3)">Next</button>
+  </div>
+
+  <!-- Third apology -->
+  <div id="apology3" style="display:none;">
+    <h1>My Apology</h1>
+    <p>I think that it'll be hard for you to trust me again, and I deeply regret that i've putten myself in a position where you'll have to question whether I truly meant that when I said that I wanted to make you the happiest girl alive with me..</p>
+    <button class="btn" onclick="showQuestion()">Next</button>
+  </div>
+
+  <!-- Question part -->
+  <div id="question" style="display:none;">
+    <h1>My Question</h1>
+    <p>Can you please give me a chance to fix what I've broken, and to remedy the wounds that i've opened, and a chance to be able to love you again, but I this time I want to do it better than I ever have.</p>
+    <button class="btn btn-green" onclick="sayYes()">Yes</button>
+    <button class="btn btn-red" onclick="sayNo()">No</button>
+  </div>
+
+  <!-- Yes response -->
+  <div id="yes" style="display:none;">
+    <h1>Thank You</h1>
+    <p>You’ve made me the happiest person alive. I promise to never let go and to love you more every single day. ❤️</p>
+  </div>
+
+  <!-- No response -->
+  <div id="no" style="display:none;">
+    <h1>Goodbye</h1>
+    <p>I honestly would understand if you chose no, what I did was shitty, and honestly, you hating me and leaving me would probably be better for you. Hell, you might find somebody else that'll give you your automatic gates.</p>
+  </div>
+
+  <script>
+    function showApology(num) {
+      document.getElementById("apology" + (num - 1)).style.display = "none";
+      document.getElementById("apology" + num).style.display = "block";
+    }
+    function showQuestion() {
+      document.getElementById("apology3").style.display = "none";
+      document.getElementById("question").style.display = "block";
+    }
+    function sayYes() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("yes").style.display = "block";
+    }
+    function sayNo() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("no").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
